@@ -64,7 +64,10 @@ router.post("/",(req,res)=>{
                 })
             
             } else {
-            res.send(JSON.parse("Username or password is wrong")); //check status on react
+
+            //res.send(JSON.parse("Username or password is wrong")); //check status on react
+
+            res.render("index.ejs",{info: "User doesn't exist"});
             }
         }
 
