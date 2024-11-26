@@ -201,7 +201,7 @@ router.post("/",upload.single('comicImg'),(req,res)=>{
 })
 
 //we need to use multer upload this way to handle multer limit exceed error:
-const uploadChapters = upload.array("chapterImg",3);
+const uploadChapters = upload.array("chapterImg",10);
 
 //router.post("/edit-chapters/:id", upload.array("chapterImg[]",2),(req,res) => {
 
@@ -211,8 +211,8 @@ router.post("/edit-chapters/:id", (req,res) => {
         if (err instanceof multer.MulterError) {
             // A Multer error occurred when uploading.
             console.log("A Multer error occurred when uploading : " + err.message);
-            var errMulter = "A Multer error occurred when uploading : " + err.message;
-
+            //var errMulter = "A Multer error occurred when uploading : " + err.message;
+            var errMulter = "Image uploads exceeded maximum amount";
 
             //grab only the spesific comic as an object from return result
             const comicsArr = req.session.user["comics"];
