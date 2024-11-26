@@ -69,6 +69,8 @@ router.post("/",(req,res)=>{
 
             res.render("index.ejs",{info: "User doesn't exist"});
             }
+        } else if (!result) {
+            res.render("index.ejs",{info: "User doesn't exist"});
         }
 
     }).catch((error)=>{
