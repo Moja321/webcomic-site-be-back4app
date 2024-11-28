@@ -70,7 +70,7 @@ router.post("/",(req,res)=>{
             res.render("index.ejs",{info: "User doesn't exist"});
             }
         } else if (!result) {
-            res.render("index.ejs",{info: "User doesn't exist"});
+            res.render("index.ejs",{info: "User doesn&#39;t exist!"});//need to be in escaped form
         }
 
     }).catch((error)=>{
