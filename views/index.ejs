@@ -51,7 +51,7 @@
     <br/>
     <% if (locals.info) { %>
         <script>
-          var msg = '<%= locals.info %>';
+          var msg = "<%- locals.info %>";
           window.onload = () =>{
             setTimeout(function() {
                 alert(msg);

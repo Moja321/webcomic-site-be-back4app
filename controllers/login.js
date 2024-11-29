@@ -67,10 +67,11 @@ router.post("/",(req,res)=>{
 
             //res.send(JSON.parse("Username or password is wrong")); //check status on react
 
-            res.render("index.ejs",{info: "User doesn't exist"});
+            res.render("index.ejs",{info: "User does not exist"});
             }
         } else if (!result) {
-            res.render("index.ejs",{info: "User doesn&#39;t exist!"});//need to be in escaped form
+            //let loginMsg = "User does not exist";
+            res.render("index.ejs",{info: "User doesn't exist"});//make sure to use <%- instead of <%= in index.ejs so that the symbols work (unescaped)
         }
 
     }).catch((error)=>{
