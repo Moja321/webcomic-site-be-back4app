@@ -47,7 +47,8 @@ const PORT = process.env.PORT || 3000;
 
 //connect to database (mongoDB)
 mongoURI = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}/${process.env.MONGO_DBNAME}`;
-mongoose.connect(mongoURI, { useUnifiedTopology: true, useNewUrlParser: true });
+//mongoose.connect(mongoURI, { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect(mongoURI);
 mongoose.connection.on(
   "error",
   console.error.bind(console, "connection error: ")
